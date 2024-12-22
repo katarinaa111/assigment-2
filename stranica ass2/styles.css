@@ -372,7 +372,7 @@ cursor: pointer;
 .accordion-item:first-child {
   border-top: none;
 }
-
+/*nesto*/
 .accordion-button {
   background-color: #007BFF;
   color: white;
