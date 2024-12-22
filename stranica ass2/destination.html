@@ -132,39 +132,9 @@
     </ul>
   </div>
 
-  <h1>Our Travel Packages</h1>
   
+   
   
-  <div class="package">
-    <h2>Beach Vacation in Bali</h2>
-    <p>A 7-day relaxing trip to the beautiful beaches of Bali, including guided tours and all-inclusive stays.</p>
-    <!-- View More Button linking to the details page, passing package ID via URL -->
-    <a href="druga.html" class="btn">View More</a>
-  </div>
-
-  <div class="package">
-    <h2>Adventurous Trekking in Nepal</h2>
-    <p>An exciting 10-day trek through the Himalayas, with breathtaking views and local cultural experiences.</p>
-    <a href="druga.html" class="btn">View More</a>
-  </div>
-
-  <div class="package">
-    <h2>Cultural Tour in Italy</h2>
-    <p>A 14-day tour through Italy, exploring historical landmarks, museums, and delicious Italian cuisine.</p>
-    <a href="druga.html" class="btn">View More</a>
-  </div>
-  <script>
-    function storePackageDetails(packageId) {
-      const packages = [
-        { id: 1, name: 'Beach Vacation in Bali', description: '7-day relaxing trip to Bali...', price: '€1200', specialPrice: '€1000', itinerary: 'Day 1: Arrival, Day 2: Beach day...'},
-        { id: 2, name: 'Adventurous Trekking in Nepal', description: '10-day trek through the Himalayas...', price: '€1500', specialPrice: '€1300', itinerary: 'Day 1: Arrival, Day 2-5: Trekking...'},
-        { id: 3, name: 'Cultural Tour in Italy', description: '14-day tour through Italy...', price: '€2000', specialPrice: '€1700', itinerary: 'Day 1: Arrival in Rome...'}
-      ];
-      
-      const package = packages.find(p => p.id === packageId);
-      localStorage.setItem('packageDetails', JSON.stringify(package));
-    }
-  </script>
 
   <footer id="footer">
     <p>Contact Us:</p>
