@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "First Blog Post",
+      "content": "This is the content of the first blog post. It includes some interesting information about travel destinations.",
+      "author": "John Doe",
+      "date": "2024-12-15"
+    },
+    {
+      "id": 2,
+      "title": "Top 10 Travel Destinations for 2024",
+      "content": "Explore the most popular travel destinations of 2024. From tropical islands to cultural cities, here's the list.",
+      "author": "Jane Smith",
+      "date": "2024-12-14"
+    },
+    {
+      "id": 3,
+      "title": "How to Pack for a Weekend Trip",
+      "content": "Learn how to efficiently pack for a short weekend getaway. Tips and tricks to make packing easier and stress-free.",
+      "author": "Sam Brown",
+      "date": "2024-12-13"
+    }
+  ]
+  

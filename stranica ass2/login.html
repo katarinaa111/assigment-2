@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  
+  
+  <link rel="stylesheet" href="styles.css">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">TravelPoint</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="aboutus.html">Why us?</a></li>
+                      <li><a class="dropdown-item" href="aboutus.html">Our Team</a></li>
+                      <li><a class="dropdown-item" href="aboutus.html">Who are we?</a></li>
+                    </ul>
+                  </li>
+                  
+                <li class="nav-item"><a class="nav-link" href="destination.html">Destination</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Signin</a></li>
+    
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+  
+      <div class="form-container">
+        <h2 class="text-center">Sign In</h2>
+        <form class="needs-validation" id="signInForm" novalidate>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="Enter your name" required>
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputSurname">Surname</label>
+              <input type="text" class="form-control" id="inputSurname" placeholder="Enter your surname" required>
+              <div class="invalid-feedback">Surname is required.</div>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputUsername">Username</label>
+            <input type="text" class="form-control" id="inputUsername" placeholder="Choose a username" required>
+            <div class="invalid-feedback">Username is required.</div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password" required minlength="8">
+            <div class="invalid-feedback">Password is required (min 8 characters).</div>
+            <div id="passwordStrength" class="mt-2"></div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" required>
+            <div class="invalid-feedback">Valid email is required.</div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputDate">Date of Birth</label>
+            <input type="date" class="form-control" id="inputDate" required>
+            <div class="invalid-feedback">Date of birth is required.</div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">Address is required.</div>
+          </div>
+    
+          <div class="form-group">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="Enter your city" required>
+            <div class="invalid-feedback">City is required.</div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+      </div>
+    
+      <footer id="footer">
+        <p>Contact Us:</p>
+        <a href="mailto:info@travel.com">Email</a> |
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      </footer>
+    
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+      <script>
+        
+        const passwordInput = document.getElementById('inputPassword');
+        const passwordStrength = document.getElementById('passwordStrength');
+    
+        passwordInput.addEventListener('input', function() {
+          const password = passwordInput.value;
+          const strength = checkPasswordStrength(password);
+          passwordStrength.textContent = strength;
+        });
+    
+        function checkPasswordStrength(password) {
+          let strength = 'Weak';
+          if (password.length >= 8) {
+            if (/[A-Z]/.test(password) && /[0-9]/.test(password)) {
+              strength = 'Strong';
+            } else if (/[a-z]/.test(password)) {
+              strength = 'Medium';
+            }
+          }
+          return strength;
+        }
+    
+        
+        const form = document.getElementById('signInForm');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+          if (!form.checkValidity()) {
+            event.stopPropagation();
+          } else {
+            alert('Form is valid and submitted!');
+          }
+          form.classList.add('was-validated');
+        });
+    
+        
+        document.querySelectorAll('.needs-validation input').forEach(function(input) {
+          input.addEventListener('input', function(event) {
+            if (input.validity.valid) {
+              input.classList.remove('is-invalid');
+            } else {
+              input.classList.add('is-invalid');
+            }
+          });
+        });
+      </script>
+    
+    </body>
+    </html>
+  <footer id="footer">
+    <p>Contact Us:</p>
+    <a href="TravelPoint:info@travel.com">Email</a> |
+    <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+  </footer>
+
+
+  <script src="login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

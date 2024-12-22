@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Details</title>
+</head>
+<body>
+  <h1>Package Details</h1>
+
+  <div id="packageDetails">
+   
+  </div>
+
+  <script>
+    
+    function getUrlParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    
+    function loadPackageDetails() {
+      const packageId = getUrlParameter('packageId');
+      
+      
+      const packages = [
+        { id: 1, name: 'Beach Vacation in Bali', description: '7-day relaxing trip to Bali with guided tours and all-inclusive stays.', price: '€1200', specialPrice: '€1000', itinerary: 'Day 1: Arrival, Day 2: Beach day, Day 3: Water sports...'},
+        { id: 2, name: 'Adventurous Trekking in Nepal', description: '10-day trek through the Himalayas, with breathtaking views and local cultural experiences.', price: '€1500', specialPrice: '€1300', itinerary: 'Day 1: Arrival, Day 2-5: Trekking...'},
+        { id: 3, name: 'Cultural Tour in Italy', description: '14-day tour through Italy, exploring landmarks, museums, and delicious Italian cuisine.', price: '€2000', specialPrice: '€1700', itinerary: 'Day 1: Arrival in Rome, Day 2: Vatican City...'}
+      ];
+      
+      
+      const package = packages.find(p => p.id == packageId);
+
+      if (package) {
+        
+        document.getElementById('packageDetails').innerHTML = `
+          <h2>${package.name}</h2>
+          <p><strong>Description:</strong> ${package.description}</p>
+          <p><strong>Regular Price:</strong> ${package.price}</p>
+          <p><strong>Special Price:</strong> ${package.specialPrice}</p>
+          <p><strong>Itinerary:</strong> ${package.itinerary}</p>
+        `;
+      } else {
+        document.getElementById('packageDetails').innerHTML = '<p>Package not found.</p>';
+      }
+    }
+
+  
+    window.onload = loadPackageDetails;
+  </script>
+
+</body>
+</html>
